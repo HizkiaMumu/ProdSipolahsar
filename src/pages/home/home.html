@@ -1,0 +1,174 @@
+<!-- Header -->
+<ion-header>
+  <ion-navbar color="darkBlue">
+    <ion-grid *ngIf="!filterOpened">
+      <ion-row>
+        <ion-col col-9 *ngIf="!isSearchBarOpened">
+          <img src="assets/imgs/Logo/Logo Sipolahsar Landscape-01.png" height="45px" width="auto" class="image" (click)="halamanProfile()">
+        </ion-col>
+        <ion-col *ngIf="!isSearchBarOpened"col-1 style="margin: auto; text-align: left;">
+          <ion-buttons no-padding style="text-align: center;">
+            <button (click)="this.openFilter()" style="border:0px; background: none; margin-left: -10px;">
+              <ion-icon ios="ios-options" md="ios-options" color="light" class="icon-filter"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+          <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
+          <ion-buttons>
+            <button ion-button icon-only class="ion-icon-close-searchbar" *ngIf="isSearchBarOpened" (click)='doRefreshButton($event)'>
+              <ion-icon name="close"></ion-icon>
+            </button>
+          </ion-buttons>        
+        <ion-col col-2 style="margin: auto;" *ngIf="!isSearchBarOpened">
+          <ion-buttons end>
+            <button (click)="isSearchBarOpened=true" style="border:0px; background: none;">
+              <ion-icon class="icon-button" name="md-search" style="font-size: 15px;"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-row *ngIf="filterOpened">
+      <ion-col col-2></ion-col>
+      <ion-col col-8 style="margin: auto;">
+        <ion-title style="text-align: center">Filter Produk</ion-title>
+      </ion-col>
+      <ion-col col-2>
+        <ion-buttons end>
+          <button ion-button (click)="filterOpened=false" style="font-size: 2rem;">X</button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<!-- Segment Button -->
+<ion-content padding>
+  
+  <ion-list *ngIf="!filterOpened">
+    <ion-list-header>
+      <ion-segment [(ngModel)]="home" color="darkBlue">
+        <ion-segment-button value="home-produk" icon-start (click)="this.setActiveButton('produk')">
+          <ion-row center>
+                <ion-col col-2 class="category-button-img-produk">
+                  <img src="assets/icon/Produk_grey.svg" width="auto" height="20px" *ngIf="this.activeButton != 'produk'">
+                  <img src="assets/icon/Produk_white.svg" width="auto" height="20px" *ngIf="this.activeButton == 'produk'">
+                </ion-col>
+                <ion-col col-10 class="category-button-txt-produk">
+                  Daftar Produk
+                </ion-col>
+              </ion-row>
+            </ion-segment-button>
+            <ion-segment-button value="home-ukm" icon-start (click)="this.setActiveButton('ukm')">
+              <ion-row center>
+                <ion-col col-2 class="category-button-img-ukm">
+                  <img src="assets/icon/UKM_grey.svg" width="auto" height="20px"  *ngIf="this.activeButton != 'ukm'">
+                  <img src="assets/icon/UKM_white.svg" width="auto" height="20px" *ngIf="this.activeButton == 'ukm'">
+                </ion-col>
+                <ion-col col-10 class="category-button-txt-ukm">
+                  Daftar UKM
+                </ion-col>
+              </ion-row>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-list-header>
+      </ion-list>
+
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Tarik Untuk Menyegarkan"
+          refreshingSpinner="circles"
+          refreshingText="Menyegarkan..."
+          >
+        </ion-refresher-content>
+      </ion-refresher>
+      <!-- Body -->
+      
+      <!-- LIST PRODUK -->
+      <div [ngSwitch]="home" *ngIf="!filterOpened">
+        <ion-list *ngSwitchCase="'home-produk'">
+          <div *ngIf="this.dataProduk == null" class="loading">
+              <img src="assets/icon/Spinner-0.5s-200px.gif" class="img-loading">
+          </div>
+          <div *ngIf="this.dataProduk != null">
+            <button ion-item *ngFor="let item of this.dataProduk; let i = index" (click)="this.itemTapped($event, item)">
+              <ion-avatar item-start style="margin-top: 0px;">
+              <img style="border-radius: 100%;" src="{{ item.foto }}" alt="" width="25px">
+              </ion-avatar>
+              <h2><b>{{ item.key }}</b></h2>
+              <p>{{ item.data.length }} Merk</p>
+              <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+            </button>
+          </div>
+        </ion-list>
+    
+        <!-- LIST UKM -->
+        <ion-list *ngSwitchCase="'home-ukm'">
+          <div *ngIf="this.dataUkm == null" class="loading">
+              <img src="assets/icon/Spinner-0.5s-200px.gif" class="img-loading">
+          </div>
+          <div *ngIf="this.dataUkm != null">
+            <button ion-item *ngFor="let item of this.dataUkm; let i = index" (click)="this.itemTappedUkm($event, item)">
+              <ion-avatar item-start style="margin-top: 0px;">
+              <img style="border-radius: 100%;" src="assets/icon/Location.svg" alt="" width="25px">
+              </ion-avatar>
+              <h2><b>{{ item.key }}</b></h2>
+              <p> {{ item.data.length }} UKM</p>
+              <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+            </button>
+          </div>
+        </ion-list>
+      </div>
+
+    </ion-content>
+
+  <!-- Filter -->
+    <ion-item *ngIf="filterOpened" color="filterColor01" style="margin-top:18%; min-height: 30px; width: 95%; margin-left: 8px !important; margin-right: 8px !important; border-radius: 100px;">
+        <ion-label no-margin style="font-size: 1rem; text-align: center;">
+          Bahan Baku Produk
+        </ion-label>
+      </ion-item>
+  
+      <ion-scroll *ngIf="filterOpened" scrollY="true" style="vertical-align: baseline;">
+        <!-- Default Checkbox -->
+        <div color="filterColor02">
+          <div *ngIf="this.backupProduk == null" class="loading-filter">
+            <img src="assets/icon/Spinner-0.5s-200px.gif" class="img-loading-filter">
+          </div>
+          <div *ngIf="this.backupProduk != null">
+            <ion-item *ngFor="let item of this.backupProduk; let i = index">
+              <ion-label color="filterColor01" style="text-transform: capitalize;">{{ item.data["0"].bahan }}</ion-label>
+              <ion-checkbox (ionChange)="checked($event)" (click)="CheckboxProdukClicked(this, item)"></ion-checkbox>
+            </ion-item>
+          </div>
+        </div>
+      </ion-scroll>
+  
+      <ion-item *ngIf="filterOpened" color="filterColor01" style="min-height: 30px; width: 95%; margin-left: 8px !important; margin-right: 8px !important; border-radius: 100px;">
+        <ion-label no-margin style="font-size: 1rem; text-align: center;">
+          Daerah
+        </ion-label>
+      </ion-item>
+  
+      <ion-scroll *ngIf="filterOpened" scrollY="true" style="min-height: 30px; width: 95%; margin-left: 8px !important; margin-right: 8px !important; border-radius: 100px; margin-bottom: 10px !important">
+          <div color="filterColor02">
+            <div *ngIf="this.backupUkm == null" class="loading-filter">
+              <img src="assets/icon/Spinner-0.5s-200px.gif" class="img-loading-filter">
+            </div>
+            <div *ngIf="this.backupUkm != null">
+            <ion-item *ngFor="let item of this.backupUkm; let i = index">
+              <ion-label color="filterColor01" style="text-transform: uppercase; text-transform: capitalize">{{ item.data["0"].nama_daerah }}</ion-label>
+              <ion-checkbox (ionChange)="checked($event)" (click)="CheckboxDaerahClicked(this, item)"></ion-checkbox>
+            </ion-item>
+          </div>
+        </div>
+      </ion-scroll>
+      
+      
+      <ion-item *ngIf="filterOpened" color="filterColor02" style="min-height: 30px; width: 95%; margin-left: 8px !important; margin-right: 8px !important; border-radius: 100px;" (click)="getFilterProduk(item, $event)">
+          <ion-label no-margin style="font-size: 1rem; text-align: center;">
+            Terapkan
+          </ion-label>
+      </ion-item>
+    <!-- END FILTER -->

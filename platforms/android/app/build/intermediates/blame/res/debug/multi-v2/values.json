@@ -1,0 +1,114 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\a\\Documents\\Project\\sipolahsar-master\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\a\\Documents\\Project\\sipolahsar-master\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "162,55,103",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "221,98,157"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,119,167",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "114,162,221"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\xampp\\htdocs\\sipolahsar_v1-master\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\xampp\\htdocs\\sipolahsar_v1-master\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "162,55,103",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "221,98,157"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,119,167",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "114,162,221"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\xampp\\htdocs\\sipolahsar-master 2\\sipolahsar-master\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\xampp\\htdocs\\sipolahsar-master 2\\sipolahsar-master\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "162,55,103",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "221,98,157"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,119,167",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "114,162,221"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\a\\Documents\\Project\\sipolahsar-master\\C:\\xampp\\htdocs\\sipol\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\a\\Documents\\Project\\sipolahsar-master\\C:\\xampp\\htdocs\\sipol\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "-1,2,-1",
+                        "startColumns": "-1,4,-1",
+                        "startOffsets": "-1,55,-1",
+                        "endColumns": "-1,47,-1",
+                        "endOffsets": "-1,98,-1"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,119,167",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "114,162,221"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\project\\sipolahsar_v1-master\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\project\\sipolahsar_v1-master\\platforms\\android\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "162,55,103",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "221,98,157"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,119,167",
+                        "endColumns": "63,47,58",
+                        "endOffsets": "114,162,221"
+                    }
+                }
+            ]
+        }
+    ]
+}

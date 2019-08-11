@@ -1,0 +1,34 @@
+<!-- HEADER -->
+<ion-header></ion-header>
+
+<!-- BODY -->
+<ion-content padding>
+  <div class="slide-zoom">
+    <ion-slides pager (ionSlideDidChange)="slideChanged()">
+      <ion-slide style="color: white; background-color: rgb(140, 148, 206)">
+      <h1 class="slide-title" style="font-size: 3rem; margin-top: 50%;">Selamat Datang</h1>
+      <p style="font-size: 1.2rem;">SIPOLAHSAR kependekan dari Sistem Informasi Pengolah dan Pemasar oleh Dinas Kelautan dan Perikanan Provinsi Jawa Barat yang berfungsi sebagai aplikasi untuk menampilkan produk-produk kelautan dan perikanan di Provinsi Jawa Barat</p>
+      <img src="assets/imgs/screen 1.png" class="slide-image"/>
+    </ion-slide>
+    <ion-slide style="color: rgb(99, 99, 99);background-color: #FFF;">
+      <img src="assets/imgs/screen 2.png" class="slide-image" style="margin-top: 10%;"/>
+      <h1 class="slide-title" style="font-size:3rem; margin-top: 30%;">UKM dan Produk</h1>
+      <p style="font-size : 1.2rem;">Anda bisa mendapatkan informasi lengkap terkait UKM di Jawa Barat yang menghasilkan produk-produk kelautan dan perikanan berkualitas tinggi. Silakan hubungi kontak yang tertera di dalam bagian UKM.</p>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>
+
+<!-- FOOTER -->
+<ion-footer >
+  <ion-toolbar *ngIf="this.buttonText == 'Skip'">
+    <ion-buttons end>
+        <button ion-button clear color="light" (click)="this.continue()"  style="text-transform: none;" >{{ this.buttonText }}</button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="darkBlue2" *ngIf="this.buttonText != 'Skip'">
+    <ion-buttons end>
+      <button ion-button clear color="light" (click)="this.continue()"  style="text-transform: none;">{{ this.buttonText }}</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

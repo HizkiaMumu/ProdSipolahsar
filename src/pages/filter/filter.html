@@ -1,0 +1,48 @@
+  <!-- Filter -->
+  <ion-item *ngIf="filterOpened" color="filterColor01" style="margin-top:18%; min-height: 30px; width: 95%; margin-left: 8px !important; margin-right: 8px !important; border-radius: 100px;">
+    <ion-label no-margin style="font-size: 1rem; text-align: center;">
+      Bahan Baku Produk
+    </ion-label>
+  </ion-item>
+
+  <ion-scroll *ngIf="filterOpened" scrollY="true" style="vertical-align: baseline;">
+    <!-- Default Checkbox -->
+    <div color="filterColor02">
+      <div *ngIf="this.backupProduk == null" class="loading-filter">
+        <img src="assets/icon/Spinner-0.5s-200px.gif" class="img-loading-filter">
+      </div>
+      <div *ngIf="this.backupProduk != null">
+        <ion-item *ngFor="let item of this.backupProduk; let i = index">
+          <ion-label color="filterColor01" style="text-transform: capitalize;">{{ item.data["0"].bahan }}</ion-label>
+          <ion-checkbox (ionChange)="checked($event)" (click)="CheckboxProdukClicked(this, item)"></ion-checkbox>
+        </ion-item>
+      </div>
+    </div>
+  </ion-scroll>
+
+  <ion-item *ngIf="filterOpened" color="filterColor01" style="min-height: 30px; width: 95%; margin-left: 8px !important; margin-right: 8px !important; border-radius: 100px;">
+    <ion-label no-margin style="font-size: 1rem; text-align: center;">
+      Daerah
+    </ion-label>
+  </ion-item>
+
+  <ion-scroll *ngIf="filterOpened" scrollY="true" style="min-height: 30px; width: 95%; margin-left: 8px !important; margin-right: 8px !important; border-radius: 100px; margin-bottom: 10px !important">
+      <div color="filterColor02">
+        <div *ngIf="this.backupUkm == null" class="loading-filter">
+          <img src="assets/icon/Spinner-0.5s-200px.gif" class="img-loading-filter">
+        </div>
+        <div *ngIf="this.backupUkm != null">
+        <ion-item *ngFor="let item of this.backupUkm; let i = index">
+          <ion-label color="filterColor01" style="text-transform: uppercase; text-transform: capitalize">{{ item.data["0"].nama_daerah }}</ion-label>
+          <ion-checkbox (ionChange)="checked($event)" (click)="CheckboxDaerahClicked(this, item)"></ion-checkbox>
+        </ion-item>
+      </div>
+    </div>
+  </ion-scroll>
+  
+  
+  <ion-item *ngIf="filterOpened" color="filterColor02" style="min-height: 30px; width: 95%; margin-left: 8px !important; margin-right: 8px !important; border-radius: 100px;" (click)="getFilterProduk(item, $event)">
+      <ion-label no-margin style="font-size: 1rem; text-align: center;">
+        Terapkan
+      </ion-label>
+  </ion-item>

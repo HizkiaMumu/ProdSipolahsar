@@ -1,0 +1,118 @@
+page-profil {
+
+    .logo {
+        text-align: center;
+    }
+
+    .hr{
+        margin-bottom: 10px;
+    }
+    .img{
+        margin-top: -11px;
+        margin-left: 13%;
+        margin-right: 50%;
+        width: 75%;
+        height: 75%;
+    }
+
+    .toolbar-background {
+        background-color: #FFF;
+      }
+
+
+    .button {
+        // size
+        width: 110px !important;
+        height: 25px !important;
+        font-size: 16px !important;
+
+        // outline
+        background-color: white;
+        color: black;
+        border: 1px solid rgb(0, 0, 255); 
+        
+        // transisi
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+
+        // position
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 20px;
+
+        // border
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    .button:hover {
+        background-color: rgb(0, 0, 255);
+        color: white;
+    }
+    
+    .button2 {
+        // size
+        width: 200px !important;
+        height: 25px !important;
+        font-size: 10px !important;
+
+        // outline
+        background-color: white;
+        color: black;
+        border: 1px solid rgb(0, 0, 255); 
+        
+        // transisi
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+
+        // position
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 30px;
+
+        // border
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    .button:hover {
+        background-color: rgb(0, 0, 255);
+        color: white;
+    }
+
+    .button2:hover {
+        background-color: rgb(0, 0, 255);
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:link {
+    color: rgb(0, 0, 255);
+    background-color: transparent;
+    text-decoration: none;
+    }
+    a:visited {
+    color: rgb(0, 0, 255);
+    background-color: transparent;
+    text-decoration: none;
+    }
+    a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    }
+    a:active {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+    }
+}

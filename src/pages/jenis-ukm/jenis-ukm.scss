@@ -1,0 +1,66 @@
+page-jenis-ukm {
+    
+    .item-md {
+        border-bottom: 1px solid #dedede !important;
+    }
+
+    .list-md .item-block .item-inner {
+        border-bottom: 0px !important;
+    }
+
+    .grid {
+        padding: 0px !important;
+    }
+
+    .back-button {
+        display: none !important; 
+    }
+
+    .image {
+        margin-top: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        width: 150px;
+        height: 150px;
+    }
+
+    .icon-button {
+        // size
+        width: 35px;
+        height: 20px;
+
+        // outline
+        background-color: rgb(13, 7, 99);
+        color: white;
+        border: 2px solid white; 
+
+        // border
+        border-radius: 300px; 
+    }
+
+    .toolbar-md-darkBlue .bar-button-clear-md, .toolbar-md-darkBlue .bar-button-default-md, .toolbar-md-darkBlue .bar-button-outline-md, .toolbar-md-darkBlue .toolbar-title-md {
+        text-transform: none;
+    }
+
+    ion-navbar.toolbar {
+        text-transform: none;
+    }
+
+    .text-toolbar {
+        text-align: center;
+    }
+
+    ion-searchbar {
+        width: 90%;
+    }
+    
+    .ion-icon-close-searchbar {
+        margin-top: 37%;
+        margin-bottom: 37%;
+        margin-left: 2px;
+        margin-right: 0px !important;
+        text-align: center;
+    }
+
+}

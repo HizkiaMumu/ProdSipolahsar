@@ -1,0 +1,138 @@
+page-home {
+
+    .back-button {
+        display: none !important; 
+    }
+
+    .image {
+        text-align: left;
+        display: block; 
+    }
+
+    .button {
+        width: 40px;
+        height: 20px;
+    }
+
+    .icon-button {
+        // size
+        width: 35px;
+        height: 20px;
+
+        // outline
+        background-color: rgb(13, 7, 99);
+        color: white;
+        border: 2px solid white; 
+
+        // border
+        border-radius: 300px; 
+    }
+
+    .grid {
+        padding: 0px;
+    }
+
+    .segment-md-darkBlue .segment-button.activated, .segment-md-darkBlue .segment-button.segment-activated {
+        background-color: rgb(38, 51, 179);
+        color: white !important;
+        border-radius: 300px;
+
+    }
+
+    .segment-md .segment-button {
+        border: 1px solid #dedede !important;
+        border-radius: 300px;
+        font-weight: 0px !important;
+        font-size: 16px !important;
+        text-transform: none !important;
+        margin: auto;
+    }
+
+    .segment-md-darkBlue .segment-button {
+        color: grey !important;
+    }
+
+    .list-header-md {
+        border-top: 0px !important;
+        border-bottom: 1px solid #dedede !important;
+        padding-left: 8px !important;
+        margin-bottom: -13px !important;
+    }
+
+    .scroll-content {
+        padding: 0px !important;
+    }
+
+    .item-md {
+        border-bottom: 1px solid #dedede !important;
+    }
+
+    .list-md .item-block .item-inner {
+        border-bottom: 0px !important;
+        border: 0px !important;
+    }
+
+    .category-button-txt-produk {
+        padding: 0px 15px 0px 3px !important;
+    }
+
+    .category-button-img-produk {
+        padding: 3px 0px 0px 10px !important;
+    }
+
+    .category-button-txt-ukm {
+        padding: 0px 30px 0px 3px !important;
+    }
+
+    .category-button-img-ukm {
+        padding: 3px 0px 0px 10px !important;
+    }
+
+    .icon-filter {
+        font-size: 23px;
+    }
+
+    .img-loading {
+        max-width: 50px;
+        max-height: 50px;
+        margin: auto;
+    }
+
+    .loading {
+        margin-top: 65%;
+        margin-bottom: 65%;
+        text-align: center;
+        display: block;
+    }
+    
+    .ion-icon-close-searchbar {
+        margin-top: 37%;
+        margin-bottom: 37%;
+        margin-left: 2px;
+        margin-right: 0px !important;
+        text-align: center;
+    }
+
+    ion-scroll {
+        margin: 2px 0 2px 0;
+        white-space: nowrap;
+        height: 35%;
+    }
+
+    .img-loading-filter {
+        max-width: 50px;
+        max-height: 50px;
+        margin: auto;
+    }
+
+    .loading-filter {
+        margin-top: 20%;
+        margin-bottom: 20%;
+        text-align:center;
+        display: block;
+    }
+
+    ion-searchbar {
+        width: 90%;
+    }
+}

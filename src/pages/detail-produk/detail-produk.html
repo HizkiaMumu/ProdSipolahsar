@@ -1,0 +1,106 @@
+<!-- HEADER -->
+<ion-header>
+  <ion-navbar color="darkBlue">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+          <ion-buttons start>
+            <button ion-button icon-only (click)="back()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-8 style="margin: auto;">
+          <ion-title style="text-align:center;">
+            Detail Produk
+          </ion-title>
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<!-- BODY -->
+<ion-content>
+  <ion-navbar style="background-color: rgb(142, 142, 142); height: 130px;" >
+    <img src="assets/imgs/logo2.png" width="20%" height="auto" class="image">
+    <p style="font-size: 1.5rem; text-align: center; padding: 3px 0px 0px 0px; margin: 0px !important; color:darkblue;">{{ this.item.brand }}</p>
+    <p style="font-size: 1rem; text-align: center; padding: 0px 0px 0px 0px; margin: 0px !important; color:rgb(34, 34, 34);">{{ this.item.nama_lengkap }}</p>
+  </ion-navbar>
+  <ion-navbar color="white">
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Daerah</p>
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.nama_daerah }}</p>
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Pemasaran</p>
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.pemasaran }}</p>
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Jenis Produk</p>
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.jenis_produk }}</p>
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Bahan baku</p>
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.bahan }}</p>
+        </b>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+
+  <ion-navbar color="white">
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Nama Produk</p>
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.nama_produk }}</p>
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Kebutuhan Produk</p>
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.kebutuhan }}</p>
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Keterangan</p>
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.keterangan }}</p>
+        </b>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-content>

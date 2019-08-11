@@ -1,0 +1,46 @@
+page-opening-satu {
+
+    .toolbar-background {
+        background: rgb(140, 148, 206);
+        color: white;
+        border-color: transparent;
+        border: 0px;
+      }
+      
+      .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        top: 0px !important;
+      }
+    
+      .slide-zoom {
+        height: 100%;
+      }
+    
+      .slide-title {
+        margin-bottom: 0.1rem;
+      }
+    
+      .slide-image {
+        max-height: 50%;
+        max-width: 50%;
+        margin-top: 10px;
+      }
+    
+      b {
+        font-weight: 500;
+      }
+    
+      p {
+        padding: 0 15px;
+        font-size: 20;
+        line-height: 1.6;
+      }
+    
+      .swiper-pagination-bullet-active {
+        background: grey !important;
+      }
+
+      .scroll-content {
+          padding: 0px !important;
+      }
+    
+}

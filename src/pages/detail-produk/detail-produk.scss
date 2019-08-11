@@ -1,0 +1,23 @@
+page-detail-produk {
+
+    .back-button {
+        display: none !important; 
+    }
+
+    .image {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        width: 20%;
+        height: auto;
+    }
+
+    ion-navbar.toolbar {
+        border-bottom: 1px rgb(180, 180, 180) solid;
+    }
+
+    .toolbar toolbar-md{
+        max-height: 250px !important;
+    }
+
+}

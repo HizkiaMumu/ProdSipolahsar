@@ -1,0 +1,64 @@
+<!-- HEADER -->
+<ion-header>
+  <ion-navbar color="darkBlue" no-padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2 *ngIf="!isSearchBarOpened" style="margin:auto;" no-padding>
+          <ion-buttons start>
+            <button ion-button icon-only (click)="back()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-8 *ngIf="!isSearchBarOpened" no-padding>
+          <ion-title style="font-size: 24px; text-transform: none;">
+            <p class="text-toolbar">
+              {{ item.key }}
+            </p>
+          </ion-title>
+        </ion-col>
+        <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
+        <ion-buttons>
+          <button ion-button icon-only class="ion-icon-close-searchbar" *ngIf="isSearchBarOpened" (click)='doRefreshButton($event)'>
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>        
+        <ion-col col-2 *ngIf="!isSearchBarOpened" style="margin: auto; text-align: center;" no-padding>
+          <ion-buttons end>
+              <button *ngIf="!isSearchBarOpened" (click)="isSearchBarOpened=true" style="border:0px; background: none;">
+                <ion-icon class="icon-button" name="md-search" style="font-size: 15px;"></ion-icon>
+              </button>
+          </ion-buttons>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<!-- BODY -->
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Tarik untuk menyegarkan"
+      refreshingSpinner="circles"
+      refreshingText="Menyegarkan...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <img src="{{ item.foto }}" width="50%" height="auto" class="image">
+
+  <hr style="color: #dedede; margin-bottom: 1px !important;">
+
+  <ion-list>
+    <button ion-item *ngFor="let item of this.item?.data; let i = index" (click)="this.itemTapped(item)">
+      <ion-avatar item-start style="margin-top: 0px;">
+        <img style="border-radius: 100%;" src="assets/icon/item 1.svg" alt="" width="25px">
+      </ion-avatar>
+      <h2>
+        <b>{{ item.brand }}</b>
+      </h2>
+      <p>{{ item.nama_lengkap }}</p>
+      <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward" item-end></ion-icon>
+    </button>
+  </ion-list>
+</ion-content>

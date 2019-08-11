@@ -1,0 +1,125 @@
+<!-- HEADER -->
+<ion-header>
+  <ion-navbar color="darkBlue">
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-2 style="padding: 5px;">
+          <ion-buttons start>
+            <button ion-button icon-only (click)="back()">
+                <ion-icon name="ios-arrow-back"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-8 style="margin: auto;">
+          <ion-title style="text-align:center;">
+            Detail UKM
+          </ion-title>
+        </ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+   
+<!-- BODY -->
+<ion-content>
+  <ion-navbar style="background-color: rgb(230, 230, 230); height: 130px;">
+    <img src="assets/imgs/logo2.png" width="20%" height="auto" class="image">
+    <p style="font-size: 1.5rem; text-align: center; padding: 3px 0px 0px 0px; margin: 0px !important; color:darkblue;">{{ this.item.brand }}</p>
+    <p style="font-size: 1rem; text-align: center; padding: 0px 0px 0px 0px; margin: 0px !important; color:rgb(34, 34, 34);">{{ this.item.nama_lengkap }}</p>
+  </ion-navbar>
+  <ion-navbar color="white">
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Daerah</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.nama_daerah }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Alamat</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.25rem;">{{ this.item.alamat }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">No. Hp</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.no_hp }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+  <ion-navbar color="white">
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">PIRT</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.pirt }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Halal</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.halal }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">SIUP</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.siup }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">TDI/TC</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.tdi_tdp }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">Badan Hukum</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.badan_hukum }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4 style="padding: 5px 5px 5px 10px !important">
+        <p style="font-size: 1.5rem;color:rgb(142, 142, 142);">E-mail</p>  
+      </ion-col>
+      <ion-col col-8 style="padding: 5px 5px 5px 4px !important">
+        <b>
+          <p style="font-size: 1.5rem;">{{ this.item.email }}</p>  
+        </b>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-content>
