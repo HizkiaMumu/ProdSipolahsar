@@ -15,6 +15,7 @@ export class JenisUkmPage {
   data: any;
   keys: any;
   dataProduk: any;
+  backupDetailUkm: any[];  
   backupDetailProduk: any[];  
   activeButton: any;
   backupProduk: any;
@@ -36,8 +37,8 @@ export class JenisUkmPage {
               private host:HostProvider) {
     this.item = this.navParams.data;
     
-    this.backupDetailProduk = this.item;
-    console.log('**navParams:', this.backupDetailProduk);
+    this.backupDetailUkm = this.item;
+    console.log('**navParams:', this.backupDetailUkm);
     this.getDataProduk();
     this.getDataUkm();
   }
@@ -103,6 +104,7 @@ export class JenisUkmPage {
 
   back(){
     this.navCtrl.pop();
+    this.isSearchBarOpened=false;
   }
 
   itemTapped(item){
@@ -110,7 +112,7 @@ export class JenisUkmPage {
   }
 
   initData(){
-    this.item = this.backupDetailProduk;
+    this.item = this.backupDetailUkm;
   }
 
   onSearch(ev: any) {
@@ -131,7 +133,7 @@ export class JenisUkmPage {
 
   doRefresh(refresher) {
     this.isSearchBarOpened=false;
-    this.item.data;
+    this.item;
     console.log('Begin async operation', refresher);
 
     setTimeout(() => {
@@ -142,7 +144,7 @@ export class JenisUkmPage {
   
   doRefreshButton(button) {
     this.isSearchBarOpened=false;
-    this.item.data;
+    this.item;
     console.log('Begin async operation', button);
   }
 

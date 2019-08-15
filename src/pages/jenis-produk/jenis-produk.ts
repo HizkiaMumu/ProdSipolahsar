@@ -103,6 +103,7 @@ export class JenisProdukPage {
 
   back(){
     this.navCtrl.pop();
+    this.isSearchBarOpened=false;
   }
 
   itemTapped(item){
@@ -121,17 +122,16 @@ export class JenisProdukPage {
     const val = ev.target.value;
 
     // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
+    if (val && val.trim() !== '') {
       this.item.data = this.item.data.filter((item) => {
         return (item.brand.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
-    }
-    console.log(this.item.data);
+    }console.log(this.item.data);
   }
 
   doRefresh(refresher) {
     this.isSearchBarOpened=false;
-    this.item.data;
+    this.navParams.data;
     console.log('Begin async operation', refresher);
 
     setTimeout(() => {
@@ -142,7 +142,7 @@ export class JenisProdukPage {
   
   doRefreshButton(button) {
     this.isSearchBarOpened=false;
-    this.item.data;
+    this.navParams.data;
     console.log('Begin async operation', button);
   }
 

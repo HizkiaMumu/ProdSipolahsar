@@ -17,7 +17,7 @@
             </p>
           </ion-title>
         </ion-col>
-        <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
+        <ion-searchbar *ngIf="isSearchBarOpened" (ionInput)="onSearch($event)"></ion-searchbar>     
         <ion-buttons>
           <button ion-button icon-only class="ion-icon-close-searchbar" *ngIf="isSearchBarOpened" (click)='doRefreshButton($event)'>
             <ion-icon name="close"></ion-icon>

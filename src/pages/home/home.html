@@ -13,13 +13,13 @@
             </button>
           </ion-buttons>
         </ion-col>
-          <ion-searchbar *ngIf="isSearchBarOpened" showCancelButton="true" (search)="onSearch($event)" (ionCancel)="isSearchBarOpened=false"></ion-searchbar>
+          <ion-searchbar *ngIf="isSearchBarOpened" (ionInput)="onSearch($event)"></ion-searchbar>     
           <ion-buttons>
-            <button ion-button icon-only class="ion-icon-close-searchbar" *ngIf="isSearchBarOpened" (click)='doRefreshButton($event)'>
-              <ion-icon name="close"></ion-icon>
-            </button>
-          </ion-buttons>        
-        <ion-col col-2 style="margin: auto;" *ngIf="!isSearchBarOpened">
+              <button ion-button icon-only class="ion-icon-close-searchbar" *ngIf="isSearchBarOpened" (click)='doRefreshButton($event)'>
+                <ion-icon name="close"></ion-icon>
+              </button>
+            </ion-buttons>  
+          <ion-col col-2 style="margin: auto;" *ngIf="!isSearchBarOpened">
           <ion-buttons end>
             <button (click)="isSearchBarOpened=true" style="border:0px; background: none;">
               <ion-icon class="icon-button" name="md-search" style="font-size: 15px;"></ion-icon>

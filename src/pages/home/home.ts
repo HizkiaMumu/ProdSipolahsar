@@ -41,6 +41,8 @@ export class HomePage {
     this.isAndroid = platform.is('android');   
     this.getDataProduk();
     this.getDataUkm();
+    this.initDataProduk();
+    this.initDataUkm();
   }
 
 
@@ -114,6 +116,7 @@ export class HomePage {
 
 
   itemTappedUkm($event, item){
+    this.isSearchBarOpened=false;
     this.navCtrl.push(JenisUkmPage, item);
   }
   
@@ -138,12 +141,11 @@ export class HomePage {
       const val = ev.target.value;
   
       // if the value is an empty string don't filter the items
-      if (val && val.trim() != '') {
+      if (val && val.trim() !== '') {
         this.dataProduk = this.dataProduk.filter((item) => {
           return (item.key.toLowerCase().indexOf(val.toLowerCase()) > -1);
-        })
-      }
-      console.log(this.activeButton);
+        });
+      }console.log(this.activeButton);
       console.log(this.dataProduk);
     } 
     if (this.activeButton == 'ukm') {
@@ -154,13 +156,12 @@ export class HomePage {
       const val = ev.target.value;
   
       // if the value is an empty string don't filter the items
-      if (val && val.trim() != '') {
+      if (val && val.trim() !== '') {
         this.dataUkm = this.dataUkm.filter((item) => {
           return (item.key.toLowerCase().indexOf(val.toLowerCase()) > -1);
         })
-      }
-      console.log(this.activeButton);
-      console.log(this.dataUkm);
+      }console.log(this.activeButton);
+       console.log(this.dataUkm);
     }
   }
 
@@ -293,6 +294,7 @@ export class HomePage {
 
   openFilter(){
     this.filterOpened=true;
+    this.isSearchBarOpened=false;
     this.dataFilterProduk = [];
   }
 

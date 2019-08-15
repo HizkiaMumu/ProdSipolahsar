@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 295:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68,7 +68,7 @@ var MenuPage = (function () {
     };
     MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"D:\project\sipolahsar_v1-master\src\pages\menu\menu.html"*/'<!-- HEADER -->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{ item.jenis_produk }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<!-- BODY -->\n<ion-content padding>\n  <img src="{{ item.foto }}" width="50%" height="auto">\n</ion-content>\n'/*ion-inline-end:"D:\project\sipolahsar_v1-master\src\pages\menu\menu.html"*/,
+            selector: 'page-menu',template:/*ion-inline-start:"D:\project\sipolahsar_v1-master - Copy\src\pages\menu\menu.html"*/'<!-- HEADER -->\n<ion-header>\n  <ion-navbar>\n    <ion-title>{{ item.jenis_produk }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<!-- BODY -->\n<ion-content padding>\n  <img src="{{ item.foto }}" width="50%" height="auto">\n</ion-content>\n'/*ion-inline-end:"D:\project\sipolahsar_v1-master - Copy\src\pages\menu\menu.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], MenuPage);

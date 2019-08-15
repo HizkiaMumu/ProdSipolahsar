@@ -1,4 +1,4 @@
-#Sat Aug 10 11:36:04 SGT 2019
-base.0=D\:\\project\\sipolahsar_v1-master\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Thu Aug 15 18:06:47 SGT 2019
+base.0=D\:\\project\\sipolahsar_v1-master - Copy\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
