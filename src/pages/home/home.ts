@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, ModalController  } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Platform, ModalController, Content} from 'ionic-angular';
 import { HostProvider } from '../../providers/host/host';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProfilPage } from '../profil/profil';
@@ -13,6 +13,8 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'home.html',
 })
 export class HomePage {
+  @ViewChild(Content)
+  content:Content;
 
   home: string = "home-produk";
   isAndroid: boolean = false;
@@ -26,6 +28,8 @@ export class HomePage {
   dataFilter: any;
   dataFilterUkm: any = [];
   dataFilterProduk: any = [];
+  
+
 
   
   public isSearchBarOpened = false;
@@ -35,14 +39,15 @@ export class HomePage {
               public navParams: NavParams, 
               public platform: Platform, 
               public host: HostProvider, 
-              public http: HttpClient, 
+              public http: HttpClient,
               public modalCtrl: ModalController,
-              private storage: Storage) {
+              private storage: Storage,) {
     this.isAndroid = platform.is('android');   
     this.getDataProduk();
     this.getDataUkm();
     this.initDataProduk();
     this.initDataUkm();
+    
   }
 
 
@@ -65,7 +70,7 @@ export class HomePage {
       this.dataProduk = [];
       this.keys = Object.keys(data);
 
-      for(let i = 0; i < this.keys.length; i++){
+      for(let i = 1; i < this.keys.length; i++){
         this.dataProduk.push({
           'key': this.keys[i],
           'data': data[this.keys[i]]
@@ -99,7 +104,7 @@ export class HomePage {
       this.dataUkm = [];
       this.keys = Object.keys(data);
 
-      for(let i = 0; i < this.keys.length; i++){
+      for(let i = 1; i < this.keys.length; i++){
         this.dataUkm.push({
           'key': this.keys[i],
           'data': data[this.keys[i]]
@@ -113,7 +118,6 @@ export class HomePage {
       console.log(err);
     });
   }
-
 
   itemTappedUkm($event, item){
     this.isSearchBarOpened=false;
@@ -132,6 +136,7 @@ export class HomePage {
     this.dataFilterProduk = this.backupFilter;
   }
 
+
   onSearch(ev: any) {
     if (this.activeButton != 'ukm') {
       // Reset items back to all of the items
@@ -145,8 +150,7 @@ export class HomePage {
         this.dataProduk = this.dataProduk.filter((item) => {
           return (item.key.toLowerCase().indexOf(val.toLowerCase()) > -1);
         });
-      }console.log(this.activeButton);
-      console.log(this.dataProduk);
+      }
     } 
     if (this.activeButton == 'ukm') {
       // Reset items back to all of the items
@@ -160,10 +164,17 @@ export class HomePage {
         this.dataUkm = this.dataUkm.filter((item) => {
           return (item.key.toLowerCase().indexOf(val.toLowerCase()) > -1);
         })
-      }console.log(this.activeButton);
-       console.log(this.dataUkm);
+      }
     }
   }
+
+  // onPageScroll(event){
+  //   console.log(event.target.scrollTop);
+  // }
+
+  // ngAfterViewInit(){
+  //   this.content.addScrollListener(this.onPageScroll);
+  // }
 
   halamanProfile(){
     this.navCtrl.push(ProfilPage);
@@ -210,6 +221,12 @@ export class HomePage {
     this.getDataProduk();
     this.getDataUkm();
     console.log('Begin async operation', button);
+  }
+  doScroll(){
+    this.isSearchBarOpened=false;
+    this.getDataProduk();
+    this.getDataUkm();
+
   }
 
   checked(e) {
@@ -298,4 +315,19 @@ export class HomePage {
     this.dataFilterProduk = [];
   }
 
+  doInfinite(): Promise<any> {
+    console.log('Begin async operation');
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        for (var i = 0; i < 0; i++) {
+          this.backupProduk.push( this.backupProduk.length );
+          this.isSearchBarOpened = false;
+        }
+
+        console.log('Async operation has ended');
+        resolve();
+      }, 500);
+    })
+  }
 }

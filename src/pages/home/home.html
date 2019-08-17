@@ -40,54 +40,40 @@
       </ion-col>
     </ion-row>
   </ion-navbar>
+  <ion-list *ngIf="!filterOpened">
+      <ion-list-header>
+        <ion-segment [(ngModel)]="home" color="darkBlue">
+          <ion-segment-button value="home-produk" icon-start (click)="this.setActiveButton('produk')">
+            <ion-row center>
+                  <ion-col col-2 class="category-button-img-produk">
+                    <img src="assets/icon/Produk_grey.svg" width="auto" height="20px" *ngIf="this.activeButton != 'produk'">
+                    <img src="assets/icon/Produk_white.svg" width="auto" height="20px" *ngIf="this.activeButton == 'produk'">
+                  </ion-col>
+                  <ion-col col-10 class="category-button-txt-produk">
+                    Daftar Produk
+                  </ion-col>
+                </ion-row>
+              </ion-segment-button>
+              <ion-segment-button value="home-ukm" icon-start (click)="this.setActiveButton('ukm')">
+                <ion-row center>
+                  <ion-col col-2 class="category-button-img-ukm">
+                    <img src="assets/icon/UKM_grey.svg" width="auto" height="20px"  *ngIf="this.activeButton != 'ukm'">
+                    <img src="assets/icon/UKM_white.svg" width="auto" height="20px" *ngIf="this.activeButton == 'ukm'">
+                  </ion-col>
+                  <ion-col col-10 class="category-button-txt-ukm">
+                    Daftar UKM
+                  </ion-col>
+                </ion-row>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-list-header>
+        </ion-list> 
 </ion-header>
 
 <!-- Segment Button -->
-<ion-content padding>
-  
-  <ion-list *ngIf="!filterOpened">
-    <ion-list-header>
-      <ion-segment [(ngModel)]="home" color="darkBlue">
-        <ion-segment-button value="home-produk" icon-start (click)="this.setActiveButton('produk')">
-          <ion-row center>
-                <ion-col col-2 class="category-button-img-produk">
-                  <img src="assets/icon/Produk_grey.svg" width="auto" height="20px" *ngIf="this.activeButton != 'produk'">
-                  <img src="assets/icon/Produk_white.svg" width="auto" height="20px" *ngIf="this.activeButton == 'produk'">
-                </ion-col>
-                <ion-col col-10 class="category-button-txt-produk">
-                  Daftar Produk
-                </ion-col>
-              </ion-row>
-            </ion-segment-button>
-            <ion-segment-button value="home-ukm" icon-start (click)="this.setActiveButton('ukm')">
-              <ion-row center>
-                <ion-col col-2 class="category-button-img-ukm">
-                  <img src="assets/icon/UKM_grey.svg" width="auto" height="20px"  *ngIf="this.activeButton != 'ukm'">
-                  <img src="assets/icon/UKM_white.svg" width="auto" height="20px" *ngIf="this.activeButton == 'ukm'">
-                </ion-col>
-                <ion-col col-10 class="category-button-txt-ukm">
-                  Daftar UKM
-                </ion-col>
-              </ion-row>
-            </ion-segment-button>
-          </ion-segment>
-        </ion-list-header>
-      </ion-list>
-
-      <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content
-          pullingIcon="arrow-dropdown"
-          pullingText="Tarik Untuk Menyegarkan"
-          refreshingSpinner="circles"
-          refreshingText="Menyegarkan..."
-          >
-        </ion-refresher-content>
-      </ion-refresher>
-      <!-- Body -->
-      
-      <!-- LIST PRODUK -->
-      <div [ngSwitch]="home" *ngIf="!filterOpened">
-        <ion-list *ngSwitchCase="'home-produk'">
+<ion-content padding >
+    <div [ngSwitch]="home" *ngIf="!filterOpened">
+        <ion-list *ngSwitchCase="'home-produk'" (click)="isSearchBarOpened=false">
           <div *ngIf="this.dataProduk == null" class="loading">
               <img src="assets/icon/Spinner-0.5s-200px.gif" class="img-loading">
           </div>
@@ -120,6 +106,24 @@
           </div>
         </ion-list>
       </div>
+      <!-- <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+          <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll> -->
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Tarik Untuk Menyegarkan"
+          refreshingSpinner="circles"
+          refreshingText="Menyegarkan..."
+          >
+        </ion-refresher-content>
+      </ion-refresher>
+      <!-- Body -->
+      
+      <!-- LIST PRODUK -->
 
     </ion-content>
 
@@ -172,3 +176,10 @@
           </ion-label>
       </ion-item>
     <!-- END FILTER -->
+<script>
+    var content = document.querySelector('ion-content');
+content.scrollEvents = true;
+content.addEventListener('ionScrollStart', () => console.log('scroll start'));
+content.addEventListener('ionScroll', (ev) => console.log('scroll', ev.detail));
+content.addEventListener('ionScrollEnd', () => console.log('scroll end'));
+</script>
